@@ -8,6 +8,11 @@ resource "aws_organizations_policy" "scp-leave-org" {
   content = file("polices/scp-leave-org.json")
 }
 
+resource "aws_organizations_policy_attachment" "scp-leave-org_attachment" {
+  policy_id = aws_organizations_policy.scp-leave-org.id
+  target_id = var.target_id
+}
+
 resource "aws_organizations_policy" "scp-bill-pay-protect" {
   name = "scp-bill-pay-protect"
   description = "This SCP prevents users or roles in any affected account from modifying the account and billing settings, either directly as a command or through the console."
