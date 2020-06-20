@@ -6,6 +6,10 @@ The following SCPs should only be applied after the account has been configured 
 
 ## Security Guardrails
 
+### AWS Organizations
+
+- Denies the ability to remove an account from the AWS Organization it is assigned to.
+
 ### Account
 
 - Denies the ability to enable or disable a region.
