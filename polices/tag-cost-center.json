@@ -1,0 +1,9 @@
+{
+    "tags": {
+        "cost-center": {
+            "tag_key": {
+                "@@assign": "cost-center"
+            }
+        }
+    }
+}

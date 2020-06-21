@@ -34,3 +34,10 @@ resource "aws_organizations_policy" "scp-s3-public-access-block" {
   content = file("polices/scp-s3-public-access-block.json")
   type = "SERVICE_CONTROL_POLICY"
 }
+
+resource "aws_organizations_policy" "tag-cost-center" {
+  name = "tag-cost-center"
+  description = "Mandate cost-center."
+  content = file("polices/tag-cost-center.json")
+  type = "TAG_POLICY"
+}
