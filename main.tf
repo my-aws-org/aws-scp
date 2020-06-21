@@ -41,3 +41,8 @@ resource "aws_organizations_policy" "tag-cost-center" {
   content = file("polices/tag-cost-center.json")
   type = "TAG_POLICY"
 }
+
+resource "aws_organizations_policy_attachment" "tag-cost-center_attachment" {
+  policy_id = aws_organizations_policy.tag-cost-center.id
+  target_id = var.target_id
+}
